@@ -1,0 +1,18 @@
+create database campaign;
+
+use campaign;
+
+create table campaign_table(
+    item_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    item_name VARCHAR(100) NOT NULL,
+    item_quantity int(5) NOT NULL,
+    item_price int(10) NOT NULL,
+    item_date DATE );
+
+insert into campaign_table (item_name, item_quantity, item_price) values ("Ice-Cream", "1", "100");
+
+create table heading_table(
+    h_id INT(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    h_name VARCHAR(150) NOT NULL );
+
+insert into heading_table (h_name) values ("Updated Heading");
