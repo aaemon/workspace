@@ -1,0 +1,12 @@
+create table project_table(
+   id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   client_name VARCHAR(50) NOT NULL,
+   client_address VARCHAR(80) NOT NULL,
+   client_mobile int(11) NOT NULL,
+   client_email VARCHAR(50) NOT NULL,
+   client_package VARCHAR(50) NOT NULL,
+   client_username VARCHAR(50),
+   client_password VARCHAR(50),
+   active int(1) DEFAULT 0,
+   entry_date datetime default CURRENT_TIMESTAMP
+);
