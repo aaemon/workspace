@@ -1,0 +1,42 @@
+CREATE TABLE `devices` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `hostname` varchar(20) NOT NULL,
+  `sysName` varchar(50) NOT NULL,
+  `state` int(1) NOT NULL,
+  `last_polled` timestamp,
+  `last_ping` timestamp,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `contact_list` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `receiver` varchar(30) NOT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `entry_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `device_list` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `node_ip` varchar(20) NOT NULL,
+  `node_name` varchar(50) NOT NULL,
+  `last_checked` timestamp NULL DEFAULT NULL,
+  `last_status` varchar(8) DEFAULT NULL,
+  `sms_sent` varchar(8) DEFAULT NULL,
+  `state` varchar(8) DEFAULT NULL,
+  `entry_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `last_update` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `sms_log` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `node_name` varchar(50) NOT NULL,
+  `node_ip` varchar(20) NOT NULL,
+  `state` varchar(8) NOT NULL,
+  `message` varchar(100) DEFAULT NULL,
+  `response` text,
+  `entry_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
