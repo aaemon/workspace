@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
-    $username = "ammer";
-    $password = "Ammer@124";
+    $username = "";
+    $password = "";
     $dbname = "iptsp";
 
     // Create connection
