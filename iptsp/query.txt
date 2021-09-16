@@ -1,0 +1,5 @@
+SELECT zone, COUNT(zone) AS total_live FROM zones WHERE caller_id_number IN (SELECT vicidial_did_log.caller_id_number 
+FROM vicidial_did_log INNER JOIN live_channels ON vicidial_did_log.channel=live_channels.channel) GROUP BY zone;
+
+SELECT zone, COUNT(zone) AS total_live FROM zones WHERE caller_id_number IN (SELECT vicidial_did_log.caller_id_number 
+FROM vicidial_did_log INNER JOIN live_channels ON vicidial_did_log.channel=live_channels.channel) GROUP BY zone ORDER BY COUNT(zone) DESC;
